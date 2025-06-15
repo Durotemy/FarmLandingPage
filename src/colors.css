@@ -1,0 +1,16 @@
+/*
+  Use this file to store your custom color variables for easy reuse in your CSS or Tailwind config.
+  Example:
+  :root {
+    --primary: #1a202c;
+    --secondary: #2d3748;
+    --accent: #38b2ac;
+    --danger: #e53e3e;
+  }
+*/
+:root {
+  --primary: #1a202c;
+  --secondary: #2d3748;
+  --accent: #38b2ac;
+  --danger: #e53e3e;
+}
