@@ -29,6 +29,15 @@ export default {
         serif: ["Merriweather", "serif"],
         mono: ["Fira Code", "monospace"],
       },
+      keyframes: {
+        "zoom-in": {
+          "0%": { transform: "scale(1)" },
+          "100%": { transform: "scale(1.03)" }, // reduced scale
+        },
+      },
+      animation: {
+        "zoom-in": "zoom-in 4s ease-in-out infinite alternate",
+      },
     },
   },
   plugins: [],
