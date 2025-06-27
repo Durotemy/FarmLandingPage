@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { navBarItem } from "../contants.ts";
 import { CiShoppingCart } from "react-icons/ci";
+import { useCart } from "../context/CartContext";
+import { Link } from "react-router-dom";
 
 export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { cartItems } = useCart();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -15,23 +18,42 @@ export const NavBar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <div className="flex-shrink-0 flex items-center">
-              <span className="text-xl font-bold text-green-600">SolaFarm</span>
+              <Link to="/">
+                <span className="text-xl font-bold text-green-600">
+                  SolaFarm
+                </span>
+              </Link>
             </div>
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
             {navBarItem.map((ele) => (
-              <a
-                className="text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium"
-                href={ele.path}
+              <Link
+                key={ele.name}
+                to={ele.path}
+                className="flex items-center space-x-2 text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
               >
-                {ele.name}
-              </a>
+                {ele.image && (
+                  <img
+                    src={ele.image}
+                    alt={ele.name}
+                    className="w-6 h-6 object-contain"
+                  />
+                )}
+                <span>{ele.name}</span>
+              </Link>
             ))}
           </div>
 
-          <div className="hidden md:flex items-center hover:cursor-pointer hover:text-green-600">
-            <CiShoppingCart size={30} />
+          <div className="hidden md:flex items-center hover:cursor-pointer hover:text-green-600 relative">
+            <Link to="/cart">
+              <CiShoppingCart size={30} />
+              {cartItems.length > 0 && (
+                <span className="absolute top-2 left-5 bg-green-500 text-white text-xs rounded-full px-2 py-0.5">
+                  {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+                </span>
+              )}
+            </Link>
           </div>
 
           <div className="md:hidden flex items-center">
@@ -77,17 +99,37 @@ export const NavBar = () => {
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
           {navBarItem.map((ele) => (
-            <a
-              href={ele.path}
-              className="text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium"
+            <Link
+              key={ele.name}
+              to={ele.path}
+              onClick={() => setIsMenuOpen(false)}
+              className="flex items-center space-x-2 text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
             >
-              {ele.name}
-            </a>
+              {ele.image && (
+                <img
+                  src={ele.image}
+                  alt={ele.name}
+                  className="w-6 h-6 object-contain"
+                />
+              )}
+              <span>{ele.name}</span>
+            </Link>
           ))}
         </div>
-        <div className="px-5 flex flex-row items-center px-4 hover:text-green-600">
-          <CiShoppingCart size={30} />
-          <p>Cart</p>
+        <div className="px-5 flex flex-row items-center px-4 hover:text-green-600 relative">
+          <Link
+            to="/cart"
+            className="flex items-center"
+            onClick={() => setIsMenuOpen(false)}
+          >
+            <CiShoppingCart size={30} />
+            {cartItems.length > 0 && (
+              <span className="absolute -top-2 -left-45 bg-green-500 text-white text-xs rounded-full px-2 py-0.5">
+                {cartItems.reduce((sum, item) => sum + item.quantity, 0)}
+              </span>
+            )}
+            <p className="ml-2">Cart</p>
+          </Link>
         </div>
       </div>
     </nav>

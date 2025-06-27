@@ -6,7 +6,7 @@ export const navBarItem: NavItem[] = [
     path: "/bsf-products",
   },
   {
-    name: "Organic Fetilizers",
+    name: "Organic Fertilizers",
     path: "/organic-fertilizers",
   },
   {

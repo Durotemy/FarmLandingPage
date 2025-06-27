@@ -3,6 +3,21 @@ export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: [
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "-apple-system",
+          "BlinkMacSystemFont",
+          "Segoe UI",
+          "Roboto",
+          "Helvetica Neue",
+          "Arial",
+          "Noto Sans",
+          "sans-serif",
+        ],
+      },
       colors: {
         "farm-green": "#38b2ac",
         "farm-red": "#e53e3e",
@@ -24,19 +39,22 @@ export default {
         "13xs": "3rem", // 48px
       },
       fontFamily: {
-        sans: ["Inter", "sans-serif"],
-
         serif: ["Merriweather", "serif"],
         mono: ["Fira Code", "monospace"],
       },
-      keyframes: {
-        "zoom-in": {
-          "0%": { transform: "scale(1)" },
-          "100%": { transform: "scale(1.03)" }, // reduced scale
-        },
-      },
       animation: {
-        "zoom-in": "zoom-in 4s ease-in-out infinite alternate",
+        slideInRight: "slideInRight 0.8s ease-out forwards",
+        slideInLeft: "slideInLeft 0.8s ease-out forwards",
+      },
+      keyframes: {
+        slideInRight: {
+          "0%": { transform: "translateX(100%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
+        slideInLeft: {
+          "0%": { transform: "translateX(-100%)", opacity: "0" },
+          "100%": { transform: "translateX(0%)", opacity: "1" },
+        },
       },
     },
   },
