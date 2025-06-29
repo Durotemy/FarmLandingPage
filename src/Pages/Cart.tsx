@@ -137,8 +137,6 @@ const Cart = () => {
                   <button
                     onClick={() => {
                       setShowModal(false);
-                      clearCart();
-                      navigate("/");
                     }}
                     className="text-gray-400 hover:text-red-400 text-2xl font-bold"
                   >

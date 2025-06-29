@@ -2,11 +2,12 @@ import { useState } from "react";
 import { navBarItem } from "../contants.ts";
 import { CiShoppingCart } from "react-icons/ci";
 import { useCart } from "../context/CartContext";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 
 export const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const { cartItems } = useCart();
+  const location = useLocation();
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -27,22 +28,29 @@ export const NavBar = () => {
           </div>
 
           <div className="hidden md:flex items-center space-x-4">
-            {navBarItem.map((ele) => (
-              <Link
-                key={ele.name}
-                to={ele.path}
-                className="flex items-center space-x-2 text-gray-700 hover:text-green-600 px-3 py-2 rounded-md text-sm font-medium transition-colors"
-              >
-                {ele.image && (
-                  <img
-                    src={ele.image}
-                    alt={ele.name}
-                    className="w-6 h-6 object-contain"
-                  />
-                )}
-                <span>{ele.name}</span>
-              </Link>
-            ))}
+            {navBarItem.map((ele) => {
+              const isActive = location.pathname === ele.path;
+              return (
+                <Link
+                  key={ele.name}
+                  to={ele.path}
+                  className={`flex items-center space-x-2 px-3 py-2 rounded-md text-sm font-medium transition-colors ${
+                    isActive
+                      ? "bg-green-100 text-green-700 font-bold"
+                      : "text-gray-700 hover:text-green-600"
+                  }`}
+                >
+                  {ele.image && (
+                    <img
+                      src={ele.image}
+                      alt={ele.name}
+                      className="w-6 h-6 object-contain"
+                    />
+                  )}
+                  <span>{ele.name}</span>
+                </Link>
+              );
+            })}
           </div>
 
           <div className="hidden md:flex items-center hover:cursor-pointer hover:text-green-600 relative">
@@ -98,23 +106,30 @@ export const NavBar = () => {
 
       <div className={`${isMenuOpen ? "block" : "hidden"} md:hidden`}>
         <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-          {navBarItem.map((ele) => (
-            <Link
-              key={ele.name}
-              to={ele.path}
-              onClick={() => setIsMenuOpen(false)}
-              className="flex items-center space-x-2 text-gray-700 hover:text-green-600 block px-3 py-2 rounded-md text-base font-medium transition-colors"
-            >
-              {ele.image && (
-                <img
-                  src={ele.image}
-                  alt={ele.name}
-                  className="w-6 h-6 object-contain"
-                />
-              )}
-              <span>{ele.name}</span>
-            </Link>
-          ))}
+          {navBarItem.map((ele) => {
+            const isActive = location.pathname === ele.path;
+            return (
+              <Link
+                key={ele.name}
+                to={ele.path}
+                onClick={() => setIsMenuOpen(false)}
+                className={`flex items-center space-x-2 block px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActive
+                    ? "bg-green-100 text-green-700 font-bold"
+                    : "text-gray-700 hover:text-green-600"
+                }`}
+              >
+                {ele.image && (
+                  <img
+                    src={ele.image}
+                    alt={ele.name}
+                    className="w-6 h-6 object-contain"
+                  />
+                )}
+                <span>{ele.name}</span>
+              </Link>
+            );
+          })}
         </div>
         <div className="px-5 flex flex-row items-center px-4 hover:text-green-600 relative">
           <Link

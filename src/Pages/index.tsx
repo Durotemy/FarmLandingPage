@@ -125,7 +125,7 @@ const HomePage = () => {
       {/* Carousel and Product Section */}
       <div className="flex flex-col items-center justify-center">
         <div className="relative h-[80vh] w-full px-4">
-          {deviceWidth > 640 && (
+          {deviceWidth >= 1024 && (
             <BsArrowLeftCircleFill
               onClick={prevSlide}
               className="absolute left-4 top-1/2 -translate-y-1/2 text-4xl text-white cursor-pointer hover:text-green-500 transition-colors z-10"
@@ -145,7 +145,7 @@ const HomePage = () => {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <div className="lg:ml-20 p-4 h-full flex flex-col  justify-center ">
+              <div className="lg:ml-20 p-8 h-full flex flex-col  justify-center ">
                 <p className="md:w-[650px] lg:w-[1000px] lg:text-[16px] text-white font-bold mb-4">
                   {item.title}
                 </p>
@@ -159,7 +159,7 @@ const HomePage = () => {
             </div>
           ))}
 
-          {deviceWidth > 640 && (
+          {deviceWidth >= 1024 && (
             <BsArrowRightCircleFill
               onClick={nextSlide}
               className="absolute right-4 top-1/2 -translate-y-1/2 text-4xl text-white cursor-pointer hover:text-green-500 transition-colors z-10"
@@ -244,7 +244,7 @@ const HomePage = () => {
             productivity.
           </p>
         </div>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-4">
+        <div className="mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
           {filteredProducts.length === 0 ? (
             <p className="text-center mt-8 text-gray-500 w-full md:col-span-3">
               No products available for this slide.
