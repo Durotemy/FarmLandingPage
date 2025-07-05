@@ -15,10 +15,10 @@ interface ProductProps {
 const Product = ({ ele }: ProductProps) => {
   const { addToCart } = useCart();
   return (
-    <div className="rounded-lg w-[300px] md:w-[380px] md:h-[320px] flex flex-col shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out mt-4 mx-auto bg-white animate-product-fade-in">
+    <div className="rounded-lg  w-[310px]  md:w-[380px] md:h-[320px] flex flex-col shadow-md hover:shadow-2xl transition-all duration-300 ease-in-out mt-2 mx-auto bg-white animate-product-fade-in">
       <div className="w-full overflow-hidden">
         <img
-          className="w-full h-full object-cover rounded-t-lg h-[200px] md:h-[350px] border-0 [clip-path:inset(1px_1px_1px_1px)]"
+          className="w-full  object-cover rounded-t-lg h-[200px] md:h-[350px] border-0 [clip-path:inset(1px_1px_1px_1px)]"
           src={ele.image}
           alt={ele.name}
         />

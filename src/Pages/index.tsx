@@ -46,42 +46,42 @@ const productData = [
   {
     id: 1,
     name: "Premium BSF Feed",
-    price: "$49.00",
+    price: "₦4,900",
     image: feed1,
     isMachine: false,
   },
   {
     id: 2,
     name: "Nutritious Larvae",
-    price: "$299.00",
+    price: "₦2,900",
     image: feed2,
     isMachine: false,
   },
   {
     id: 3,
     name: "Sustainable Protein",
-    price: "$674.00",
+    price: "₦6,000",
     image: feed3,
     isMachine: false,
   },
   {
     id: 4,
     name: "Green Fertilizer",
-    price: "$1,124.00",
+    price: "₦1,100",
     image: feed4,
     isMachine: false,
   },
   {
     id: 5,
     name: "Organic Fertilizer",
-    price: "$1,124.00",
+    price: "₦4,560",
     image: feed5,
     isMachine: false,
   },
   {
     id: 6,
     name: "Compost Fertilizer",
-    price: "$1,124.00",
+    price: "₦3,820",
     image: feed6,
     isMachine: false,
   },
@@ -124,7 +124,7 @@ const HomePage = () => {
     <div className="overflow-y-scroll no-scrollbar w-full mb-20">
       {/* Carousel and Product Section */}
       <div className="flex flex-col items-center justify-center">
-        <div className="relative h-[80vh] w-full px-4">
+        <div className="relative h-[80vh] w-full max-w-[calc(100%-1rem)] px-4">
           {deviceWidth >= 1024 && (
             <BsArrowLeftCircleFill
               onClick={prevSlide}
@@ -141,6 +141,9 @@ const HomePage = () => {
               style={{
                 backgroundImage: `url(${item.src})`,
                 backgroundSize: "cover",
+                borderRadius: "0.5rem",
+                marginTop: "0.5rem",
+                marginBottom: "0.5rem",
                 backgroundPosition: "center",
                 backgroundRepeat: "no-repeat",
               }}
@@ -149,7 +152,7 @@ const HomePage = () => {
                 <p className="md:w-[650px] lg:w-[1000px] lg:text-[16px] text-white font-bold mb-4">
                   {item.title}
                 </p>
-                <p className="md:w-[650px] lg:w-[700px] lg:text-[16px] text-white text-sm leading-6 lg:text-[16px]">
+                <p className="md:w-[650px] lg:w-[700px]  text-white text-sm leading-6 lg:text-[16px]">
                   {item.text}
                 </p>
                 <div className="hover:cursor-pointer bg-white w-[100px] p-2 rounded-tr-lg rounded-bl-lg  mt-4">
@@ -196,55 +199,60 @@ const HomePage = () => {
 
       {/* Stats/Impact Section */}
       <section className="w-full max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-6 mb-10">
-        <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-          <span className="text-4xl font-bold text-green-600 mb-2">
+        <div className="bg-white border rounded-lg shadow-md p-6 flex flex-col items-center">
+          <span className="text-4xl font-bold text-center text-green-600 mb-2">
             1500 tons
           </span>
-          <p className="text-gray-600 text-center text-sm">
+          <p className="text-gray-600 font-bold text-center text-sm">
             Since our founding, we have processed over 1,500 tons of organic
             waste, turning it into valuable resources for farmers and their
             environment, demonstrating our dedication to sustainability
           </p>
         </div>
-        <div className="bg-white items-center rounded-lg shadow-md p-6 flex flex-col items-center">
-          <span className="text-4xl font-bold text-green-600 mb-2">253</span>
-          <p className="text-gray-600 text-center text-sm">Products</p>
-        </div>
-        <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-          <span className="text-4xl font-bold text-green-600 mb-2">
+
+        <div className="bg-white border rounded-lg shadow-md p-6 flex flex-col items-center">
+          <span className="text-4xl text-center font-bold text-green-600 mb-2">
             50 million
           </span>
-          <p className="text-gray-600 text-center text-sm">
+          <p className="text-gray-600 font-bold text-center text-sm">
             We have successfully cultivated over 50 million BSF larvae,
             providing a sustainable protein source that reduces reliance on
             traditional feed options.
           </p>
         </div>
-        <div className="bg-white rounded-lg shadow-md p-6 flex flex-col items-center">
-          <span className="text-4xl font-bold text-green-600 mb-2">
+        <div className="bg-white border rounded-lg shadow-md p-6 flex flex-col items-center">
+          <span className="text-4xl text-center font-bold text-green-600 mb-2">
             10 years
           </span>
-          <p className="text-gray-600 text-center text-sm">
+          <p className="text-gray-600 font-bold text-center text-sm">
             With over a decade of experience, SolaFarms continues to innovate
             and lead in eco-friendly insect farming, committed to agricultural
             excellence.
           </p>
         </div>
+        <div className="bg-white border justify-center rounded-lg shadow-md p-6 flex flex-col items-center">
+          <span className="text-4xl font-bold text-green-600 text-center mb-2">
+            253
+          </span>
+          <p className="text-gray-600 text-center font-bold text-sm">
+            Products
+          </p>
+        </div>
       </section>
 
       {/* Product Intro and Grid */}
-      <div className="w-full max-w-7xl mx-auto px-4 mt-12 mb-4">
+      <div className="w-full mt-24 max-w-7xl mx-auto px-4  mb-4">
         <div>
           <h2 className="text-2xl font-bold text-green-700 mb-2">
             Explore Our Range of Our Awesome Products
           </h2>
-          <p className="text-gray-700 text-lg">
+          <p className="text-gray-700 text-[18px]">
             Including organic fertilizers and nutritious animal feeds designed
             to support sustainable farming practices and improve agricultural
             productivity.
           </p>
         </div>
-        <div className="mb-24 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
+        <div className="mb-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-4">
           {filteredProducts.length === 0 ? (
             <p className="text-center mt-8 text-gray-500 w-full md:col-span-3">
               No products available for this slide.
