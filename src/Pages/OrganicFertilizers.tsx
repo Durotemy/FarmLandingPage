@@ -18,7 +18,7 @@ const OrganicFertilizers = () => {
       <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
         Organic Fertilizers
       </h1>
-      <p className="text-lg text-gray-700 max-w-xl text-center p-4 mb-4">
+      <p className="text-sm md:text-[16px] text-gray-700 max-w-xl text-center p-4 mb-4">
         Discover our organic fertilizers, crafted to enrich your soil and boost
         crop yields while supporting sustainable farming practices.
       </p>

@@ -24,7 +24,7 @@ const WasteManagement = () => {
       <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
         Waste Management
       </h1>
-      <p className="text-lg text-gray-700 max-w-xl text-center p-4">
+      <p className="text-sm md:text-[16px] text-gray-700 max-w-xl text-center p-4">
         Learn about our innovative waste management solutions that turn organic
         waste into valuable resources for a greener future.
       </p>

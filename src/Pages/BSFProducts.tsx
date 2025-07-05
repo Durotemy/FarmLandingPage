@@ -18,7 +18,7 @@ const BSFProducts = () => {
       <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
         BSF Products
       </h1>
-      <p className="p-2 text-lg text-gray-700 max-w-xl text-center">
+      <p className="p-2 text-sm md:text-[16px] leading-7 text-gray-700 max-w-xl text-center">
         Explore our range of Black Soldier Fly products, including organic
         fertilizers and nutritious animal feeds designed for sustainable
         agriculture.

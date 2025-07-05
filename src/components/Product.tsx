@@ -25,8 +25,8 @@ const Product = ({ ele }: ProductProps) => {
       </div>
       <div className="flex flex-row items-center justify-between px-2 py-4">
         <div>
-          <p className="text-gray-600 text-[16px]">{ele?.name}</p>
-          <p className="text-gray-600 text-[16px]">{ele.price}</p>
+          <p className="text-gray-600 text-[16px] font-bold">{ele?.name}</p>
+          <p className="text-gray-600 text-[16px] font-bold">{ele.price}</p>
         </div>
         <div>
           <CiSquarePlus

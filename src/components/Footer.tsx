@@ -5,7 +5,7 @@ const Footer = () => {
         <span className="font-bold text-lg">SolaFarms</span> &copy;{" "}
         {new Date().getFullYear()} &mdash; All rights reserved.
       </div>
-      <div className="mt-2 md:mt-0 text-sm text-green-100">
+      <div className="mt-2 md:mt-0 text-sm ">
         Our Commitment: Sustainable Agriculture &bull; Eco-Friendly Innovation
       </div>
     </footer>

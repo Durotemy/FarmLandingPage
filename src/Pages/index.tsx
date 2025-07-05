@@ -155,11 +155,11 @@ const HomePage = () => {
                 <p className="md:w-[650px] lg:w-[1000px] lg:text-[16px] text-white font-bold mb-4">
                   {item.title}
                 </p>
-                <p className="md:w-[650px] lg:w-[700px]  text-white text-sm leading-6 lg:text-[16px]">
+                <p className="md:w-[650px] lg:w-[700px]  text-white text-sm leading-6 md:text-[16px] lg:text-[16px]">
                   {item.text}
                 </p>
                 <div className="hover:cursor-pointer bg-white w-[100px] p-2 rounded-tr-lg rounded-bl-lg  mt-4">
-                  <p className="text-sm">Learn more</p>
+                  <p className="text-sm text-green-700 font-bold">Learn more</p>
                 </div>
               </div>
             </div>
@@ -191,7 +191,7 @@ const HomePage = () => {
           <h1 className="text-3xl md:text-4xl font-bold text-green-700 mb-4">
             Our Commitment to Sustainable Agriculture
           </h1>
-          <p className="max-w-2xl text-lg md:text-xl text-gray-700 mb-2 mx-auto">
+          <p className="max-w-2xl text-lg md:text-[16px] text-gray-700 mb-2 mx-auto">
             At SolaFarms, we harness innovative farming techniques to produce
             high-quality environmental friendly Black Soldier Fly products. Our
             mission is to revolutionize waste management and animal nutrition
@@ -249,7 +249,7 @@ const HomePage = () => {
           <h2 className="text-2xl font-bold text-green-700 mb-2">
             Explore Our Range of Our Awesome Products
           </h2>
-          <p className="text-gray-700 text-[18px]">
+          <p className="text-gray-700 text-lg md:text-[16px] mb-4">
             Including organic fertilizers and nutritious animal feeds designed
             to support sustainable farming practices and improve agricultural
             productivity.
