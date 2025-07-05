@@ -22,12 +22,14 @@ import Product from "../components/Product";
 
 const carouselData = [
   {
+    id: 1,
     src: greenFlower,
     title: "Premium BSF Products for Your Needs",
     text: "Explore our range of high quality Black Soldier Fly products tailored to meet diverse agricultural needs. From organic fertilizers that enrich your soil to nutritious animal feed supplements, Sola Farms delivers sustainable and effective solutions.",
     alt: "Farm landscape 1",
   },
   {
+    id: 2,
     src: fefsfd,
     isMachine: true,
     title: "Sustained Agriculture with black soldier flies",
@@ -35,6 +37,7 @@ const carouselData = [
     alt: "Farm landscape 1",
   },
   {
+    id: 3,
     src: nuts,
     title: "Join the sustainable Farming Revolution",
     text: "At Sola Farms, we are committed to transforming the agricultural landscape with eco- friendly practices and innovative BSF  solutions. Partner with us to create a more sustainable future for farming and contribute to a healthier planet.",
@@ -148,7 +151,7 @@ const HomePage = () => {
                 backgroundRepeat: "no-repeat",
               }}
             >
-              <div className="lg:ml-20 p-8 h-full flex flex-col  justify-center ">
+              <div className="lg:ml-20 mt-10 p-8 h-full flex flex-col  justify-center ">
                 <p className="md:w-[650px] lg:w-[1000px] lg:text-[16px] text-white font-bold mb-4">
                   {item.title}
                 </p>
