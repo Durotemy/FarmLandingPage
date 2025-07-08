@@ -40,7 +40,7 @@ const Cart = () => {
                 <img
                   src={item.image}
                   alt={item.name}
-                  className="w-40 h-40 object-cover rounded-lg border-2 border-green-100 mr-8 shadow-md"
+                  className="lg:w-40 lg:h-40 w-24 h-24 object-cover rounded-lg border-2 border-green-100 mr-8 shadow-md"
                 />
                 <div className="flex-1">
                   <p className="font-semibold text-lg text-gray-800 mb-1">
@@ -84,7 +84,7 @@ const Cart = () => {
             >
               Clear Cart
             </button>
-            <div className="text-xl font-bold">
+            <div className="ml-2 text-sm lg:text-xl font-bold">
               Total: ${getTotal().toFixed(2)}
             </div>
             <button
